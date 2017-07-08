@@ -1,0 +1,90 @@
+<html>
+    <script>
+        class Questions {
+            
+            constructor(question, nextQ, r1, w1, w2, w3, w4) {
+                this.question = question;
+                this.nextQ = nextQ
+                this.r1 = r1;
+                this.w1 = w1;
+                this.w2 = w2;
+                this.w3 = w3;
+                this.w4 = w4;
+            	
+            }
+           getRandomAnswers() {
+           	
+						function shuffleArray(array) { 
+							
+						  for (var i = array.length - 1; i > 0; i--) {
+						      var j = Math.floor(Math.random() * (i + 1));
+						      var temp = array[i];
+						      array[i] = array[j];
+						      array[j] = temp;
+						  }
+						  return array;
+						}
+           	
+           	let answerArray = [this.r1, this.w1, this.w2, this.w3, this.w4];
+           	answerArray = shuffleArray(answerArray);
+           	
+           	return answerArray.join("");
+           	
+           }
+        }
+        
+    			class Quizmaker {
+        	
+        	constructor(questionsArray) {
+        		this.questionsArray = questionsArray; // All your questions objects are here. 
+        		
+        		// q1 is this.questionsArray[0]
+        		// q2 is this.questionsArray[1]
+        		document.write("This is the first questions: "+ this.questionsArray[0].question);
+        	}
+        	drawQuestions(){
+	        	x = 0
+	        	return this.questionsArray[x].question + this.questionsArray[x].getRandomAnswers()// + questionsArray.nextQ 
+    			}
+    			//document.write(drawQuestions());
+    			}/* Quizmaker
+    			
+        	startQuiz {
+        		Loop here
+        			drawQuestionNum(x);
+        		End loop
+        	}
+        	
+        	drawQuestionNum(number) {
+        			var x == 0
+        			
+        		}
+        		 return questionsArray[x]
+        		// This draws any particular question that is requested...
+        	} 
+        	
+        	formQuestion() {
+        	}
+        	return radio form back that is paired with the questions and answers
+        }
+        */
+        
+      
+   		var q1  = new Questions("What color is the sky?</br>", `<button onclick="myFunction()">Submit</button>`, "Blue</br>","Brown</br>","Gray</br>","Orange</br>");
+   		var q2  = new Questions("Who is Dan?</br>", `<button onclick="myFunction()">Submit</button>`, "All the answers listed are correct</br>", "The Man</br>","Burger restaurant owner</br>","A Barber</br>");
+  		var q3	= new Questions("Question3?", "answer", "answer", "answer", "answer");
+  		var q4	=	new Questions("Question4?", "answer", "answer", "answer", "answer");
+  		var q5	=	new Questions("Question5?", "answer", "answer", "answer", "answer");
+  		
+  		var questionsArray = [q1, q2, q3, q4, q5];
+  		
+  		var quiz = new Quizmaker(questionsArray);
+  		
+  		/*
+  		  document.write("<h1>" + q1.question + "</h1>" + q1.getRandomAnswers() + q1.nextQ);
+        document.write("<h1>" + q2.question + "</h1>" + q2.getRandomAnswers() + q2.nextQ);
+        document.write(drawQuestions(x))
+      */
+
+    </script>
+</html>
